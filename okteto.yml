@@ -1,0 +1,13 @@
+name: dbt-tutorial
+autocreate: true
+image: ramiro/dbt:0.21.1
+command: bash
+volumes:
+- /root/.cache/pip
+- /root/.dbt
+sync:
+- .:/usr/src/app
+forward:
+- 8080:8080
+reverse:
+- 9000:9000
