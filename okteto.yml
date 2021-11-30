@@ -4,9 +4,10 @@ image: ramiro/dbt:0.21.1
 command: bash
 volumes:
 - /root/.cache/pip
-- /root/.dbt
 sync:
 - .:/usr/src/app
+environment:
+- DBT_PROFILES_DIR=/usr/src/app/.profiles
 forward:
 - 8080:8080
 reverse:
